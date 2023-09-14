@@ -1,0 +1,71 @@
+/*set background to green*/
+/* container is a class with two columns */
+html,
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+.row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+/* column is a class for each column en container*/
+.col {
+    height: 100%;
+    /*fit content8*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.right {
+    width: 75%;
+    /*fill the entire div with red*/
+    background-color: red;
+    /*the width changes to 90% when the screen is smaller than 600px*/
+    /*the width changes to 70% when the screen is smaller than 768px*/
+    @media screen and (max-width: 768px) {
+        width: 70%;
+    }
+    @media screen and (max-width: 600px) {
+        width: 90%;
+    }
+}
+
+.left {
+    flex-grow: 1;
+    /*tablet size 768px TO 20% */
+    background-color: blue;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.sidebtn
+{
+    width: 100%;
+    display: flex;
+    /* padding: 5%; */
+}
+/*style the buttons inside sidebtn*/
+.sidebtn a
+{
+
+    width: 100%;
+    height: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: thick;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
