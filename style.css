@@ -1,10 +1,16 @@
 /*set background to green*/
 /* container is a class with two columns */
+* {
+    
+}
 html,
 body{
-    height: 100%;
+    height: 95%;
     width: 100%;
     margin: 0;
+}
+footer{
+    height: 5%;
 }
 .row {
     width: 100%;
@@ -19,23 +25,7 @@ body{
 .col {
     height: 100%;
     /*fit content8*/
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
-}
-
-.right {
-    width: 75%;
-    /*fill the entire div with red*/
-    background-color: red;
-    /*the width changes to 90% when the screen is smaller than 600px*/
-    /*the width changes to 70% when the screen is smaller than 768px*/
-    @media screen and (max-width: 768px) {
-        width: 70%;
-    }
-    @media screen and (max-width: 600px) {
-        width: 90%;
-    }
 }
 
 .left {
@@ -46,19 +36,41 @@ body{
     align-content: center;
     
 }
+.right {
+    /*in order to make the padding on the top and bottom work*/
+    box-sizing: border-box;
 
-.sidebtn
-{
-    width: 100%;
-    display: flex;
-    /* padding: 5%; */
+    width: 60%;
+
+    display: grid;
+    column-gap: 2%;
+    row-gap: 1%;
+    padding: 1%;
+    /*the width changes to 70% when the screen is smaller than 768px*/
+    grid-template-columns: repeat(3, 1fr);
+    @media screen and (max-width: 768px) {
+        width: 50%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /*the width changes to 90% when the screen is smaller than 600px*/
+    @media screen and (max-width: 600px) {
+        width: 25%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /*create a smooth transition when the width of the screen changes*/
+    transition: width 0.5s ease-in-out;
 }
+
 /*style the buttons inside sidebtn*/
 .sidebtn a
 {
-
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*disable text underline*/
+    text-decoration: none;
     height: 100%;
+    width: 100%;
     background-color: #4CAF50;
     color: white;
     border: thick;
@@ -67,5 +79,4 @@ body{
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    text-align: center;
 }
