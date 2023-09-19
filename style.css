@@ -1,17 +1,23 @@
-/*set background to green*/
-/* container is a class with two columns */
 * {
-    
+    --auburn: #a31f26ff;
+    --arylide-yellow: #e3c567ff;
+    --satin-sheen-gold: #c8963eff;
+    --earth-yellow: #d9ae61ff;
+    --dark-cyan: #548687ff;
 }
+
 html,
-body{
-    height: 95%;
+body {
+    height: 100%;
     width: 100%;
     margin: 0;
 }
-footer{
+
+footer {
     height: 5%;
+    background-color: var(--earth-yellow);
 }
+
 .row {
     width: 100%;
     height: 100%;
@@ -21,6 +27,7 @@ footer{
     align-items: center;
     align-content: center;
 }
+
 /* column is a class for each column en container*/
 .col {
     height: 100%;
@@ -29,13 +36,38 @@ footer{
 }
 
 .left {
-    flex-grow: 1;
+    /*the width is 100 minus the width of the right column*/
+    width: 40%;
+
+    /* flex-grow: 1; */
     /*tablet size 768px TO 20% */
     background-color: blue;
     align-items: center;
     align-content: center;
-    
+    display: flex;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        width: 50%;
+    }
+
+    /*the width changes to 90% when the screen is smaller than 600px*/
+    @media screen and (max-width: 600px) {
+        width: 75%;
+    }
 }
+
+.video {
+    /* have the video fit inside the container */
+    height: 100%;
+}
+
+.logo {
+    /*hover in the middle of the container 10% from the top*/
+    
+
+}
+
 .right {
     /*in order to make the padding on the top and bottom work*/
     box-sizing: border-box;
@@ -48,22 +80,21 @@ footer{
     padding: 1%;
     /*the width changes to 70% when the screen is smaller than 768px*/
     grid-template-columns: repeat(3, 1fr);
+
     @media screen and (max-width: 768px) {
         width: 50%;
         grid-template-columns: repeat(2, 1fr);
     }
+
     /*the width changes to 90% when the screen is smaller than 600px*/
     @media screen and (max-width: 600px) {
         width: 25%;
         grid-template-columns: repeat(1, 1fr);
     }
-    /*create a smooth transition when the width of the screen changes*/
-    transition: width 0.5s ease-in-out;
 }
 
 /*style the buttons inside sidebtn*/
-.sidebtn a
-{
+.sidebtn a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,5 +109,4 @@ footer{
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
