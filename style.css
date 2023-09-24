@@ -18,8 +18,21 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    ;
     flex-direction: column;
+}
+
+.container_1 {
+    display: grid;
+    grid-template-columns: 60% 40%; /* Dos columnas: la izquierda ocupa 2/3 del espacio, la derecha 1/3 */
+    gap: 20px; /* Espacio entre columnas */
+    padding: 20px;
+}
+
+.container_2 {
+    display: grid;
+    grid-template-columns: 40% 60%; /* Dos columnas: la izquierda ocupa 2/3 del espacio, la derecha 1/3 */
+    gap: 20px; /* Espacio entre columnas */
+    padding: 20px;
 }
 
 footer {
@@ -128,6 +141,7 @@ footer {
     }
 }
 
+
 /*style the buttons inside sidebtn*/
 .sidebtn a {
     display: flex;
@@ -153,7 +167,7 @@ footer {
 .slider-container {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: auto;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 }
@@ -163,4 +177,14 @@ footer {
     width: 100%;
     object-fit: cover;
     scroll-snap-align: center;
+}
+
+.left-column {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.right-column {
+    background-color: #e0e0e0;
+    padding: 20px;
 }
