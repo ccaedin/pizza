@@ -6,6 +6,10 @@
     --dark-cyan: #548687ff;
 }
 
+a{
+    text-decoration: none;
+}
+
 html,
 body {
     height: 100%;
@@ -36,8 +40,42 @@ body {
 }
 
 footer {
-    background-color: var(--dark-cyan);
+    background-color: var(--earth-yellow);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+footer
+{
+    padding: 10px;
+}
+footer > div > a{
+    padding: 5px;
+}
+/* set the display to none so that is doesn't appear unless its open */
+dialog:not(:target):not([open]) { display: none; }
+dialog { 
+    display: block;
+    width: 50%;
+     /*set position in middle of page  */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px;
+}
+
+.close-dialog {
+    /* set the text all the way to the right in its container*/
+    float: right;
+}
+.title-dialog {
+    margin-top: 0;
+}
+
 
 .return {
     position: relative;
@@ -72,8 +110,6 @@ footer {
     /*the width is 100 minus the width of the right column*/
     width: 40%;
 
-    /* flex-grow: 1; */
-    /*tablet size 768px TO 20% */
     background-color: blue;
     align-items: center;
     align-content: center;
@@ -105,8 +141,6 @@ footer {
     right: 0;
     top: 5%;
     margin: 0 auto;
-
-
 }
 
 .logo img {
@@ -128,7 +162,8 @@ footer {
     padding: 1%;
     /*the width changes to 70% when the screen is smaller than 768px*/
     grid-template-columns: repeat(3, 1fr);
-
+    /*hack to get the rows to be the same height*/
+    grid-auto-rows: 1fr;
     @media screen and (max-width: 768px) {
         width: 50%;
         grid-template-columns: repeat(2, 1fr);
@@ -144,19 +179,19 @@ footer {
 
 /*style the buttons inside sidebtn*/
 .sidebtn a {
+
     display: flex;
     /*center the text vertically and horizontally*/
     align-items: center;
     justify-content: center;
-
     /*disable text underline*/
     text-decoration: none;
-    height: 100%;
-    width: 100%;
-
+    text-align: center;
     background-color: var(--auburn);
     color: white;
-    border: thick;
+    /* border: thick; */
+    height: 100%;
+    width: 100%;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
