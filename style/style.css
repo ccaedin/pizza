@@ -4,6 +4,7 @@
     --satin-sheen-gold: #c8963eff;
     --earth-yellow: #d9ae61ff;
     --dark-cyan: #548687ff;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -211,26 +212,27 @@ dialog {
     flex: 0 0 100%;
     width: 100%;
     object-fit: cover;
-    scroll-snap-align: center;
+    /* scroll-snap-align: start; */
 }
 
 .left-column {
     background-color: var(--auburn);
     padding: 20px;
     color: white;
+    border-radius: 5px;
+    /*increase font and line spacing and change font*/
+    font-size: 16px;
+    line-height: 1.5;
+    
 }
 
 .right-column {
     background-color: var(--arylide-yellow);
     padding: 20px;
+    border-radius: 5px;
+    text-align: center;
 }
 
-.test:active .slider-container::-webkit-scrollbar-thumb
-{
-    /*move the width of the slide container to the right*/
-    transform: translateX(100%);
-    /*make the scrollbar transparent*/
-    background-color: violet;
+.right-column > h1{
+    margin-top: 0;
 }
-/* when transitioning to process automatically start scrolling the scrollbar in slider-container */
-
