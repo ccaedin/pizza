@@ -14,7 +14,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-
+    background-color: var(--earth-yellow);
     margin: 0;
 }
 
@@ -215,11 +215,22 @@ dialog {
 }
 
 .left-column {
-    background-color: #f2f2f2;
+    background-color: var(--auburn);
     padding: 20px;
+    color: white;
 }
 
 .right-column {
-    background-color: #e0e0e0;
+    background-color: var(--arylide-yellow);
     padding: 20px;
 }
+
+.test:active .slider-container::-webkit-scrollbar-thumb
+{
+    /*move the width of the slide container to the right*/
+    transform: translateX(100%);
+    /*make the scrollbar transparent*/
+    background-color: violet;
+}
+/* when transitioning to process automatically start scrolling the scrollbar in slider-container */
+
