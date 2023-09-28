@@ -243,3 +243,16 @@ dialog {
 .right-column > h1{
     margin-top: 0;
 }
+
+.image-container {
+    display: flex;
+    flex-direction: column; /* Coloca las imágenes verticalmente */
+    align-items: center; /* Centra las imágenes horizontalmente */
+    max-width: 100%; /* Asegura que el contenedor no sea más ancho que su contenedor principal */
+}
+  
+  .image-container img {
+    max-width: 100%; /* Asegura que las imágenes no sean más anchas que su contenedor */
+    height: auto; /* Mantiene la proporción de aspecto de las imágenes */
+    margin: 10px 0; /* Espacio entre las imágenes */
+}
