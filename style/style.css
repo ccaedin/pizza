@@ -5,15 +5,15 @@
     --earth-yellow: #d9ae61ff;
     --dark-cyan: #548687ff;
     font-family: 'Roboto', sans-serif;
-        /*let the font size be determined by how large the screen is*/
-    /*messed around until I got a good value*/
 }
 
-p{
+p {
+    /*let the font size be determined by how large the screen is*/
+    /*messed around until I got a good value*/
     font-size: calc(0.5em + 1vw);
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -34,15 +34,19 @@ body {
 
 .container_1 {
     display: grid;
-    grid-template-columns: 0.6fr 0.4fr; /* Dos columnas: la izquierda ocupa 2/3 del espacio, la derecha 1/3 */
-    gap: 20px; /* Espacio entre columnas */
+    grid-template-columns: 0.6fr 0.4fr;
+    /* Dos columnas: la izquierda ocupa 2/3 del espacio, la derecha 1/3 */
+    gap: 20px;
+    /* Espacio entre columnas */
     padding: 20px;
 }
 
 .container_2 {
     display: grid;
-    grid-template-columns: 0.4fr 0.6fr; /* Dos columnas: la izquierda ocupa 2/3 del espacio, la derecha 1/3 */
-    gap: 20px; /* Espacio entre columnas */
+    grid-template-columns: 0.4fr 0.6fr;
+    /* Dos columnas: la izquierda ocupa 2/3 del espacio, la derecha 1/3 */
+    gap: 20px;
+    /* Espacio entre columnas */
     padding: 20px;
 }
 
@@ -54,19 +58,23 @@ footer {
     align-items: center;
 }
 
-footer
-{
-    padding: 10px;
-}
-footer > div > a{
+footer {
     padding: 5px;
 }
+
+footer>div>a {
+    padding: 5px;
+}
+
 /* set the display to none so that is doesn't appear unless its open */
-dialog:not(:target):not([open]) { display: none; }
-dialog { 
+dialog:not(:target):not([open]) {
+    display: none;
+}
+
+dialog {
     display: block;
     width: 50%;
-     /*set position in middle of page  */
+    /*set position in middle of page  */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -79,6 +87,7 @@ dialog {
     /* set the text all the way to the right in its container*/
     float: right;
 }
+
 .title-dialog {
     margin-top: 0;
 }
@@ -87,7 +96,7 @@ dialog {
 .return {
     position: relative;
     top: -10%;
-    left:50%;
+    left: 50%;
 }
 
 .content {
@@ -113,6 +122,28 @@ dialog {
     justify-content: space-around;
 }
 
+@media screen and (max-width: 768px) {
+    .left {
+        width: 50%;
+    }
+    .right {
+        width: 50%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*the width changes to 90% when the screen is smaller than 600px*/
+@media screen and (max-width: 600px) {
+    .left {
+        width: 75%;
+    }
+    /*the width changes to 90% when the screen is smaller than 600px*/
+    .right {
+        width: 25%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 .left {
     /*the width is 100 minus the width of the right column*/
     width: 40%;
@@ -123,15 +154,6 @@ dialog {
     display: inline-flex;
     overflow: hidden;
     position: relative;
-
-    @media screen and (max-width: 768px) {
-        width: 50%;
-    }
-
-    /*the width changes to 90% when the screen is smaller than 600px*/
-    @media screen and (max-width: 600px) {
-        width: 75%;
-    }
 }
 
 .video {
@@ -148,6 +170,15 @@ dialog {
     right: 0;
     top: 5%;
     margin: 0 auto;
+    text-align: center;
+    color: white;
+    
+}
+.logo > h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
 .logo img {
@@ -171,16 +202,6 @@ dialog {
     grid-template-columns: repeat(3, 1fr);
     /*hack to get the rows to be the same height*/
     grid-auto-rows: 1fr;
-    @media screen and (max-width: 768px) {
-        width: 50%;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /*the width changes to 90% when the screen is smaller than 600px*/
-    @media screen and (max-width: 600px) {
-        width: 25%;
-        grid-template-columns: repeat(1, 1fr);
-    }
 }
 
 
@@ -230,7 +251,7 @@ dialog {
     border-radius: 5px;
     /*increase font and line spacing and change font*/
     line-height: 1.5;
-    
+
 }
 
 .right-column {
@@ -240,19 +261,25 @@ dialog {
     text-align: center;
 }
 
-.right-column > h1{
+.right-column>h1 {
     margin-top: 0;
 }
 
 .image-container {
     display: flex;
-    flex-direction: column; /* Coloca las imágenes verticalmente */
-    align-items: center; /* Centra las imágenes horizontalmente */
-    max-width: 100%; /* Asegura que el contenedor no sea más ancho que su contenedor principal */
+    flex-direction: column;
+    /* Coloca las imágenes verticalmente */
+    align-items: center;
+    /* Centra las imágenes horizontalmente */
+    max-width: 100%;
+    /* Asegura que el contenedor no sea más ancho que su contenedor principal */
 }
-  
-  .image-container img {
-    max-width: 100%; /* Asegura que las imágenes no sean más anchas que su contenedor */
-    height: auto; /* Mantiene la proporción de aspecto de las imágenes */
-    margin: 10px 0; /* Espacio entre las imágenes */
+
+.image-container img {
+    max-width: 100%;
+    /* Asegura que las imágenes no sean más anchas que su contenedor */
+    height: auto;
+    /* Mantiene la proporción de aspecto de las imágenes */
+    margin: 10px 0;
+    /* Espacio entre las imágenes */
 }
