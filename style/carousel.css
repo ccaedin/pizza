@@ -1,0 +1,58 @@
+* {
+    --auburn: #a31f26ff;
+    --arylide-yellow: #e3c567ff;
+    --satin-sheen-gold: #c8963eff;
+    --earth-yellow: #d9ae61ff;
+    --dark-cyan: #548687ff;
+    font-family: 'Roboto', sans-serif;
+}
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/* Carrusel de imágenes en la columna derecha */
+.carousel-slider {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow-x: scroll;
+    overflow: hidden;
+    /* scroll-snap-type: x mandatory; */
+
+}
+.carousel-image {
+    flex: 0 0 100%;
+    width: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+    display: none;
+}
+.carousel-image.active {
+    display: block;
+
+}
+/* when the carousel-image has a active tag show it */
+
+.carousel-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* create item gap */
+}
+
+.carousel-circle {
+    /* margin: 0px; */
+    margin: 1vh;
+    height: 2vh;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.carousel-circle.active {
+    background-color: var(--auburn);
+}

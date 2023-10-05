@@ -226,22 +226,15 @@ dialog {
     cursor: pointer;
 }
 
-/* Carrusel de imágenes en la columna derecha */
-.slider-container {
-    display: flex;
-    width: 100%;
-    height: auto;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-
-
+/* make the images pop out of the screen a bit when hovered in image-container*/
+.image-container img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
 }
-
-.slider-container img {
-    flex: 0 0 100%;
-    width: 100%;
-    object-fit: cover;
-    scroll-snap-align: start;
+.image-container img:not(:hover)
+{
+    transform: scale(1);
+    transition: transform 0.5s;
 }
 
 .left-column {
@@ -282,4 +275,10 @@ dialog {
     /* Mantiene la proporción de aspecto de las imágenes */
     margin: 10px 0;
     /* Espacio entre las imágenes */
+}
+
+.highlight.active {
+    color: var(--arylide-yellow);
+    font-weight: bold;
+    font-size: calc(0.7em + 1vw);
 }

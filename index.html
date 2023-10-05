@@ -7,6 +7,10 @@
     <title>LAA ZAA Pizza</title>
     <!-- CSS imported from style.css-->
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/carousel.css">
+    <!-- import javascript from script.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
     <link rel="icon" href="images/logo.png">
 </head>
 
@@ -33,8 +37,8 @@
                     <div class="sidebtn"><a href="#aboutus">About Us</a></div>
                     <div class="sidebtn"><a href="#process">Our Process</a></div>
                     <div class="sidebtn"><a href="#products">Our Products</a></div>
-                    <div class="sidebtn"><a href="">Our Locations</a></div>
-                    <div class="sidebtn"><a href="">Our Blog</a></div>
+                    <div class="sidebtn"><a href="#contact">Our Contact</a></div>
+                    <div class="sidebtn"><a href="">Create Account</a></div>
                     <div class="sidebtn"><a href="">Order Online</a></div>
                 </div>
             </div>
@@ -48,28 +52,56 @@
                 </div>
                 <div class="left-column">
                     <p class="">
-                        LAA ZAA was founded by a group of friends who shared a common love for pizza. We wanted to create a place where people could come together, enjoy great food, and make lasting memories. Our journey began with a simple idea: to serve the best pizza in town. We started small, with just a tiny kitchen and a few tables. But word quickly spread about our delicious pizzas, and soon, we had a loyal following of pizza lovers from all over the city. As our popularity grew, so did our restaurant. We expanded our menu, added more seating, and hired a team of talented chefs who shared our passion for pizza. Over the years, we've had the pleasure of serving countless customers, each with their own unique stories and memories. From birthday parties to family gatherings, LAA ZAA has become a place where people can celebrate life's special moments. We take pride in being a part of these joyous occasions and strive to make every visit a memorable one.
+                        LAA ZAA was founded by a group of friends who shared a common love for pizza. We wanted to
+                        create a place where people could come together, enjoy great food, and make lasting memories.
+                        Our journey began with a simple idea: to serve the best pizza in town. We started small, with
+                        just a tiny kitchen and a few tables. But word quickly spread about our delicious pizzas, and
+                        soon, we had a loyal following of pizza lovers from all over the city. As our popularity grew,
+                        so did our restaurant. We expanded our menu, added more seating, and hired a team of talented
+                        chefs who shared our passion for pizza. Over the years, we've had the pleasure of serving
+                        countless customers, each with their own unique stories and memories. From birthday parties to
+                        family gatherings, LAA ZAA has become a place where people can celebrate life's special moments.
+                        We take pride in being a part of these joyous occasions and strive to make every visit a
+                        memorable one.
 
-                        But our journey doesn't end here. We're constantly experimenting with new flavors, exploring different cooking techniques, and pushing the boundaries of what pizza can be. Our goal is to continue surprising and delighting our customers with innovative and mouthwatering creations.
-                        
-                        Thank you for being a part of our story. We look forward to serving you and creating more delicious memories together!
-                        
+                        But our journey doesn't end here. We're constantly experimenting with new flavors, exploring
+                        different cooking techniques, and pushing the boundaries of what pizza can be. Our goal is to
+                        continue surprising and delighting our customers with innovative and mouthwatering creations.
+
+                        Thank you for being a part of our story. We look forward to serving you and creating more
+                        delicious memories together!
+
                     </p>
                 </div>
             </div>
             <div id="process" class="container_1">
-                <div class="left-column">
-                    <p class="">
-                        Are you craving a mouthwatering pizza? Look no further! At LAA ZAA, we specialize in crafting the perfect pizza to satisfy your taste buds. To make our signature pizza, start by preparing a fresh dough made from high-quality flour, yeast, water, and a pinch of salt. Roll out the dough into a thin crust and spread a generous layer of our secret tomato sauce. Next, sprinkle a blend of premium cheeses and add your favorite toppings, such as savory pepperoni, fresh vegetables, or succulent grilled chicken. Finally, bake the pizza in a hot oven until the crust is golden and the cheese is bubbly. Order now and experience pizza perfection!
+                <div class="left-column highlight-container">
+                    <p>
+
+                        Are you craving a mouthwatering pizza? Look no further! At LAA ZAA, we specialize in crafting
+                        the perfect pizza to satisfy your taste buds.
+                        <span class="highlight 1 active">To make our signature pizza, start by preparing a fresh dough
+                            made from high-quality flour, yeast, water, and a pinch of salt.</span>
+                        <span class="highlight 2">Roll out the dough into a thin crust and spread a generous layer of
+                            our secret tomato sauce. </span>
+                        <span class="highlight 3">Next, sprinkle a blend of premium cheeses and add your favorite
+                            toppings, such as savory pepperoni, fresh vegetables, or succulent grilled chicken.</span>
+                        <span class="highlight 4"> Finally, bake the pizza in a hot oven until the crust is golden
+                            and the cheese is bubbly. Order now and experience pizza perfection!</span>
                     </p>
                 </div>
                 <div class="right-column">
                     <h1>Our Process</h1>
-                    <div class="slider-container">
-                        <img class="carousel-image" src="images/pizza1.jpg" alt="Imagen 1">
-                        <img class="carousel-image" src="images/pizza2.jpg" alt="Imagen 1">
-                        <img class="carousel-image" src="images/pizza3.jpg" alt="Imagen 1">
-                        <img class="carousel-image" src="images/pizza4.jpg" alt="Imagen 1">
+                    <div class="carousel-container">
+                        <div class="carousel-slider">
+                            <img class="highlight carousel-image active" src="images/pizza1.jpg" alt="Imagen 1">
+                            <img class="highlight carousel-image" src="images/pizza2.jpg" alt="Imagen 1">
+                            <img class="highlight carousel-image" src="images/pizza3.jpg" alt="Imagen 1">
+                            <img class="highlight carousel-image" src="images/pizza4.jpg" alt="Imagen 1">
+                        </div>
+                        <div class="carousel-indicators">
+                            <!-- white circle -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,24 +109,57 @@
                 <div class="right-column">
                     <h1>Our Products</h1>
                     <div class="image-container">
-                        <img class="carousel-image" src="images/Barbacoa-2610.jpeg" alt="Imagen 1">
-                        <img class="carousel-image" src="images/Carbonara-2617.jpeg" alt="Imagen 1">
-                        <img class="carousel-image" src="images/Hawaiana-2637.jpeg" alt="Imagen 1">
+                        <img class src="images/Barbacoa-2610.jpeg" alt="Imagen 1">
+                        <img class src="images/Carbonara-2617.jpeg" alt="Imagen 1">
+                        <img class src="images/Hawaiana-2637.jpeg" alt="Imagen 1">
                     </div>
                 </div>
-                <div class="left-column">
-                    <p>
-                        - Margherita: Indulge in the timeless perfection of our Margherita pizza. This classic Italian delight starts with a thin, crispy crust, handcrafted to perfection. We then layer it with the freshest, ripe tomatoes, bursting with flavor and warmth. Next comes the creamy, melt-in-your-mouth mozzarella cheese, which oozes over the entire pizza, creating a harmonious blend of textures and tastes. To crown this masterpiece, we scatter fragrant basil leaves across the top, infusing every bite with a delightful herbal aroma. It's a simple yet elegant combination that captures the essence of Italy in every slice.     
-                    </p>
-                    <p>
-                        - Pepperoni: For those who crave a satisfying punch of flavor, our Pepperoni pizza is a must-try. We start with a foundation of our signature pizza dough, perfectly baked to achieve that ideal balance between crispy and chewy. Then, we generously adorn it with slices of spicy pepperoni, each one meticulously selected to provide just the right amount of heat and zest. The pepperoni's smoky richness harmonizes with the bubbling, golden cheese that blankets the entire pie. It's a classic that never goes out of style, delivering a symphony of flavors that will leave your taste buds dancing.
-                    </p>
-                    <p>
-                        - Hawaiian: Take a flavor-packed journey to the tropics with our Hawaiian pizza. We begin with our artisanal pizza crust, expertly crafted to ensure an irresistible crunch with every bite. Then, we layer on tender pieces of premium ham, cooked to perfection to enhance its natural sweetness and juiciness. For a touch of exotic flair, we scatter succulent pineapple chunks across the ham, adding a burst of tropical juiciness that contrasts beautifully with the savory elements. The result is a harmonious blend of sweet and savory, creating a pizza experience that transports you to a sun-kissed beach with each mouthwatering slice.
-                    </p>    
+                <div class="left-column highlight-container">
+
+                        <p>
+                            - Margherita: Indulge in the timeless perfection of our Margherita pizza. This classic
+                            Italian
+                            delight starts with a thin, crispy crust, handcrafted to perfection. We then layer it with
+                            the
+                            freshest, ripe tomatoes, bursting with flavor and warmth. Next comes the creamy,
+                            melt-in-your-mouth mozzarella cheese, which oozes over the entire pizza, creating a
+                            harmonious
+                            blend of textures and tastes. To crown this masterpiece, we scatter fragrant basil leaves
+                            across
+                            the top, infusing every bite with a delightful herbal aroma. It's a simple yet elegant
+                            combination that captures the essence of Italy in every slice.
+                        </p>
+                        <p>
+                            - Pepperoni: For those who crave a satisfying punch of flavor, our Pepperoni pizza is a
+                            must-try. We start with a foundation of our signature pizza dough, perfectly baked to
+                            achieve
+                            that ideal balance between crispy and chewy. Then, we generously adorn it with slices of
+                            spicy
+                            pepperoni, each one meticulously selected to provide just the right amount of heat and zest.
+                            The
+                            pepperoni's smoky richness harmonizes with the bubbling, golden cheese that blankets the
+                            entire
+                            pie. It's a classic that never goes out of style, delivering a symphony of flavors that will
+                            leave your taste buds dancing.
+                        </p>
+                        <p>
+                            - Hawaiian: Take a flavor-packed journey to the tropics with our Hawaiian pizza. We begin
+                            with
+                            our artisanal pizza crust, expertly crafted to ensure an irresistible crunch with every
+                            bite.
+                            Then, we layer on tender pieces of premium ham, cooked to perfection to enhance its natural
+                            sweetness and juiciness. For a touch of exotic flair, we scatter succulent pineapple chunks
+                            across the ham, adding a burst of tropical juiciness that contrasts beautifully with the
+                            savory
+                            elements. The result is a harmonious blend of sweet and savory, creating a pizza experience
+                            that
+                            transports you to a sun-kissed beach with each mouthwatering slice.
+                        </p>
                 </div>
             </div>
+            <div id="contact" class="contact-class">
 
+            </div>
 
         </div>
         <!-- Pop up for giving credit -->
