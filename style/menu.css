@@ -47,7 +47,7 @@
 .progress-ball {
     background-color: gray;
     width: 4vh;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     /* align-self: center; */
     justify-self: center;
@@ -78,4 +78,41 @@
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+.content {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.content.active {
+    width: 100%;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+#menuConfirm {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+#orderSummary {
+    margin: 5vh 0;
+}
+
+#timerBox {
+    background-color: var(--auburn);
+    height: calc(75px + 25vw);
+    font-size: 10vw;
+    border-radius: 50%;
+    /* border-width: 50vh; */
+    aspect-ratio: 1 / 1;
+    /* center border on text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--arylide-yellow)
 }
