@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAA ZAA Order</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script/menu.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="breadcrumbs">
+
+        </div>
+        <div class="menu-counter">
+            <div id="progressBar">
+                <!-- the three progess balls -->
+                <div id="progressBalls">
+                    <div id="selectionBall" class="progress-ball"></div>
+                    <div id="reviewBall" class="progress-ball"></div>
+                    <div id="confirmBall" class="progress-ball"></div>
+                </div>
+                <div id="progress">
+
+                </div>
+            </div>
+            <button>Next</button>
+        </div>
+        <div id="menuSelection" class="content">
+            <div class="menu-item">
+                <img class="menu-item-img" src="images/pizza1.jpg" alt="">
+                <div class="menu-item-info">
+                    <!-- short description about bread rolls -->
+                    Freshly baked bread rolls, served warm and fluffy. Perfect for any meal or snack. Choose
+                    from plain,
+                    sesame, or poppy seed varieties.
+                </div>
+                <div class="menu-item-selection">
+                    <button class="btn btn-minus">-</button>
+                    <input type="text" class="counter" value="0">
+                    <button class="btn btn-plus">+</button>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="menuReview" class="content">
+
+        </div>
+        <div id="menuStatus" class="content">
+
+        </div>
+</body>
+
+</html>

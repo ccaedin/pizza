@@ -1,0 +1,81 @@
+.menu-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: var(--arylide-yellow);
+    border-radius: 25px;
+    padding: 0.5em;
+    column-gap: 0.5em;
+    
+}
+
+.menu-counter {
+    display: grid;
+    padding: 2vh 1vh;
+    grid-template-columns: 8.5fr 1.5fr;
+    column-gap: 0.5em;
+}
+
+#progressBar {
+    background-color: white;
+    width: 100%;
+    /* margin-right: 0.5vh; */
+    border-radius: 5px;
+    position: relative;
+    /* flex-grow: 1; */
+}
+#progress {
+    background-color: var(--auburn);
+    width: 10%;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+#progressBalls {
+    width: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    align-items: center;
+    /* place div in center of other div */
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    
+}
+
+.progress-ball {
+    background-color: gray;
+    width: 4vh;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* align-self: center; */
+    justify-self: center;
+    /*  */
+}
+.progress-ball.active {
+    background-color: var(--auburn);
+} 
+
+.menu-counter button {
+    width: 100%;
+}
+
+.menu-item-img {
+    /* have the image fit within the container */
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+.menu-item-selection {
+    display: grid;
+    /* grid with 1fr 2fr 1fr */
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.2em;
+    align-items: center;
+}
+.menu-item-info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

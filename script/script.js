@@ -58,20 +58,18 @@ $(document).ready(function () {
     });
     //set up highlight timer
     setInterval(function () {
-    highlights.forEach(function (highlight) {
-        // var highlight = $(h);
-        //print out classes
-        if(highlight.hasClass("active")){
-            var container = highlight.closest(".highlight-container");
-            //list the sub elements of container
-            // console.log(container.find(".highlight"));
-            container.find(".highlight.active").removeClass("active");
-            container.find(".highlight").eq((highlight.index()) % container.find(".highlight").length).addClass("active");
-        }
+        highlights.forEach(function (highlight) {
+            // var highlight = $(h);
+            //print out classes
+            if (highlight.hasClass("active")) {
+                var container = highlight.closest(".highlight-container");
+                //list the sub elements of container
+                // console.log(container.find(".highlight"));
+                container.find(".highlight.active").removeClass("active");
+                container.find(".highlight").eq((highlight.index()) % container.find(".highlight").length).addClass("active");
+            }
+        });
+
     });
-
 });
-
 //every time a css class changes
-
-
