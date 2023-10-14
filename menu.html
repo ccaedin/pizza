@@ -13,10 +13,7 @@
 
 <body>
     <div class="container">
-        <div class="breadcrumbs">
-
-        </div>
-        <div class="menu-counter">
+        <div id="breadcrumb">
             <div id="progressBar">
                 <!-- the three progess balls -->
                 <div id="progressBalls">
@@ -25,23 +22,35 @@
                     <div id="confirmBall" class="progress-ball"></div>
                 </div>
                 <div id="progress">
-
+    
                 </div>
             </div>
-            <button>Next</button>
+            <!-- <button>Next</button> -->
         </div>
         <div id="menuSelection" class="content active">
-            <div class="menu-item">
+            <div id="menuTotals">
+                <div id="">
+                    Total items: <span id=totalItems>0</span>
+                </div>
+                <div>
+                    Total price: €<span id="totalPrice">0</span>
+                </div>
+                <button id="menuSelectionNext" type="button" disabled>Next</button>
+            </div>
+            <div id="pepperoniPizza" class="menu-item" price="12">
                 <img class="menu-item-img" src="images/pizza1.jpg" alt="">
-                <div class="menu-item-info">
-                    <!-- short description about bread rolls -->
+                <div class="menu-item-body">
+                    <div class="menu-item-info">
+                        <h4 class="menu-item-title">Pepperoni</h4>
+                        <h4 class="menu-item-price">€12</h4>
+                    </div>
                     Freshly baked bread rolls, served warm and fluffy. Perfect for any meal or snack. Choose
                     from plain,
                     sesame, or poppy seed varieties.
                 </div>
                 <div class="menu-item-selection">
                     <button class="btn btn-minus">-</button>
-                    <input type="text" class="counter" value="0">
+                    <input type="text" class="" value="0">
                     <button class="btn btn-plus">+</button>
                 </div>
             </div>

@@ -1,20 +1,8 @@
-.menu-item {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    background-color: var(--arylide-yellow);
-    border-radius: 25px;
-    padding: 0.5em;
-    column-gap: 0.5em;
-    
-}
-
-.menu-counter {
-    display: grid;
+#breadcrumb {
+    display: flex;
     padding: 2vh 1vh;
-    grid-template-columns: 8.5fr 1.5fr;
-    column-gap: 0.5em;
+    height: 2vh;
 }
-
 #progressBar {
     background-color: white;
     width: 100%;
@@ -46,7 +34,7 @@
 
 .progress-ball {
     background-color: gray;
-    width: 4vh;
+    width: 6vw;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     /* align-self: center; */
@@ -57,16 +45,46 @@
     background-color: var(--auburn);
 } 
 
-.menu-counter button {
-    width: 100%;
+#menuTotals {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 1%;
+}
+#menuTotals * {
+    margin: 0.2vh;
+    padding: 1vh;
+    border: vw;
+    border-radius: 5px;
+    background-color: var(--auburn);
+
+}
+#menuTotals button {
+    /* get rid of normal button styling */
+    border: none;
+}
+#menuTotals button:not(:disabled):hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
-.menu-item-img {
-    /* have the image fit within the container */
-    width: 100%;
-    height: auto;
+.menu-item {
+    display: grid;
+    grid-template-columns: 3fr 6fr 1fr;
+    background-color: var(--arylide-yellow);
     border-radius: 25px;
+    padding: 0.5em;
+    column-gap: 0.5em;
+    margin: 1vw;
+    
 }
+
+.menu-item-head {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .menu-item-selection {
     display: grid;
     /* grid with 1fr 2fr 1fr */
@@ -74,11 +92,30 @@
     column-gap: 0.2em;
     align-items: center;
 }
+.menu-item-img {
+    /* have the image fit within the container */
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+.menu-item-body {
+    display: flex;
+    /* align-items: center; */
+    text-align: center;
+    flex-direction: column;
+}
 .menu-item-info {
     display: flex;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
 }
+.menu-item-info h4 {
+    margin: 1vh 0;
+}
+
+
 
 .content {
     width: 0;
