@@ -14,6 +14,7 @@ $(document).ready(function () {
     //get all the menu item selection divs
     setupProgess();
     setupMenuSelection();
+    setUpReview();
 });
 
 //function for when the selectionBall is clicked 
@@ -26,7 +27,10 @@ function setupProgess() {
         clearInterval(timerInterval);
         $(".progress-ball").removeClass("active");
         $(ball).addClass("active");
-        $("#progress").css("width", width);
+        //select which progess bar to fill
+        var progress = $("#progress1");
+
+        // progress.css("width", width);
     };
     var setMenu = function (menu) {
         $("#" + activeMenu).removeClass("active");
@@ -34,26 +38,21 @@ function setupProgess() {
         activeMenu = menu;
     };
     $("#selectionBall").click(function () {
-        setBall(this, "30%");
+        setBall(this, 30);
 
         //set menuSelection to active
         setMenu("menuSelection");
 
     });
     $("#reviewBall").click(function () {
-        setBall(this, "60%");
-        $("#selectionBall").addClass("active");
+        setBall(this, 60);
 
         //set menuReview to active
         setMenu("menuReview");
 
     });
     $("#confirmBall").click(function () {
-        $(".progress-ball").removeClass("active");
-        $("#selectionBall").addClass("active");
-        $("#reviewBall").addClass("active");
-        $("#progress").css("width", "80%");
-
+        setBall(this, 90);
         //set menuConfirm to active
         setMenu("menuConfirm");
         $("#timer").text(timerDuration);
@@ -156,8 +155,12 @@ function setupMenuSelection() {
             input.change();
         });
         input.change(function () {
-            order.items[id] = {title: title, count:  +input.val(), price: price*input.val()};
-            //calculate the total 
+            //if order.items[id] exists
+            order.items[id] = { title: title, count: +input.val(), price: price * input.val() };
+            //if there is an order that matched title, change
+
+            //calculate the total
+            length = 0;
             order.totalItems = 0;
             order.totalPrice = 0;
             for (var key in order.items) {
@@ -166,16 +169,78 @@ function setupMenuSelection() {
             }
             $("#totalItems").text(order.totalItems);
             $("#totalPrice").text(order.totalPrice);
-            if(order.totalItems>0){
+            if (order.totalItems > 0) {
                 $("#menuSelectionNext").attr("disabled", false);
             }
-            else{
+            else {
                 $("#menuSelectionNext").attr("disabled", true);
             }
+            window.sessionStorage.setItem("order", JSON.stringify(order));
         });
     });
 
     $("#menuSelectionNext").click(function () {
+        setUpReview();
         $("#reviewBall").click();
     });
+
 }
+
+function setUpReview() {
+    $("#orderReview button").click(function () {
+        $("#selectionBall").click();
+    });
+    $("#orderItems").empty();
+    for (var key in order.items) {
+        var item = order.items[key];
+        var htmlItem = document.createElement("div");
+        htmlItem.classList.add("order-item");
+        var img = document.createElement("img");
+        img.src = "images/pizza1.jpg";
+        htmlItem.appendChild(img);
+        var title = document.createElement("div");
+        var nameTag = document.createElement("p");
+        var name = document.createTextNode(item.title + " x" + item.count);
+        var priceTag = document.createElement("p");
+        var price = document.createTextNode("€" + item.price);
+        nameTag.appendChild(name);
+        priceTag.appendChild(price);
+        title.appendChild(nameTag);
+        title.appendChild(priceTag);
+        htmlItem.appendChild(title);
+        console.log("fsdf");
+        $("#orderItems").append(htmlItem);
+    }
+    $("#orderTotalItems").text(order.totalItems);
+    $("#orderTotalPrice").text(order.totalPrice);
+
+    $("#orderInformation input[type='button']").click(function () {
+        $("#confirmBall").click();
+    });
+
+    //enabled submit button if all the fields are filled in
+    $("#orderInformation").change(function () {
+        console.log("changed");
+        var allFilled = true;
+        var radioChecked = false;
+        $("#orderInformation input").each(function () {
+            //if the value is a radio button check if it is checked
+            if ($(this).attr("type") == "radio") {
+                if ($(this).is(":checked")) {
+                    radioChecked = true;
+                }
+            }
+            else if ($(this).val() == "") {
+                allFilled = false;
+            }
+        });
+        if (allFilled && radioChecked) {
+            console.log("all filled");
+            $("#orderInformation input[type='button']").attr("disabled", false);
+        }
+        else {
+            $("#orderInformation input[type='button']").attr("disabled", true);
+        }
+    });
+}
+

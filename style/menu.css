@@ -1,68 +1,100 @@
 #breadcrumb {
-    display: flex;
-    padding: 2vh 1vh;
-    height: 2vh;
+    min-height: 5vh;
+    padding: 1rem;
+    display: inline-flex;
+    align-items: center;
 }
-#progressBar {
+
+.progress-bar {
+    display:inline-block;
     background-color: white;
-    width: 100%;
-    /* margin-right: 0.5vh; */
-    border-radius: 5px;
-    position: relative;
-    /* flex-grow: 1; */
+    flex-grow: 2;
+    height: 30%;
 }
-#progress {
+
+.progress-bar div {
     background-color: var(--auburn);
-    width: 10%;
+    width: 0%;
     height: 100%;
-    border-radius: 5px;
     transition: width 0.5s ease-in-out;
 }
-
-#progressBalls {
+/* not supported in firefox */
+/* if the progress ball if active, fill up the previous progress bars*/
+.progress-bar:has(~ .progress-ball.active) div{
     width: 100%;
-    position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
-    align-items: center;
-    /* place div in center of other div */
-    top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-    
 }
+/* active the progress ball if the ball in front is active */
+.progress-ball:has(~ .progress-ball.active) {
+    background-color: var(--auburn);
+}
+
+/* if the progress ball is active, in front there is not delay */
+
+
+
 
 .progress-ball {
+    box-sizing: border-box;
+    display: inline-block;
     background-color: gray;
-    width: 6vw;
-    aspect-ratio: 1 / 1;
+    width: 5vw;
+    /* allow progress to grow inways */
+    margin: 0 -1vw;
+    aspect-ratio: 1/1;
     border-radius: 50%;
-    /* align-self: center; */
-    justify-self: center;
-    /*  */
+    z-index: 1;
+    /* WIP circle animation */
+    /* background: linear-gradient(to left, gray 50%, var(--auburn) 50%) right;
+    background-size: 200% 100%;
+    transition: 0.5s background ease-out;
+    transition-delay: 0.5s; */
 }
+#selectionBall {
+    margin-left: 0;
+}
+#confirmBall {
+    margin-right: 0;
+}
+
+
+
+
 .progress-ball.active {
     background-color: var(--auburn);
-} 
+    background-position: left;
+}
 
 #menuTotals {
-    display:flex;
+    display: flex;
     flex-direction: row;
+    /* no wrap */
+    flex-wrap: nowrap;
     justify-content: flex-end;
     padding-right: 1%;
+    /* don't take up all the screen */
+    margin-left: 50%;
 }
-#menuTotals * {
+#menuTotals button,
+#menuTotals div {
     margin: 0.2vh;
-    padding: 1vh;
-    border: vw;
+    padding: 0.5em;
     border-radius: 5px;
     background-color: var(--auburn);
-
+    flex-grow: 2;
 }
+
+
 #menuTotals button {
     /* get rid of normal button styling */
     border: none;
 }
+
+#menuTotals button{
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+/* style the button on hover when not disabled */
 #menuTotals button:not(:disabled):hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -75,12 +107,12 @@
     border-radius: 25px;
     padding: 0.5em;
     column-gap: 0.5em;
-    margin: 1vw;
-    
+    margin: 1vw 15vw;
+
 }
 
 .menu-item-head {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -88,22 +120,48 @@
 .menu-item-selection {
     display: grid;
     /* grid with 1fr 2fr 1fr */
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     column-gap: 0.2em;
-    align-items: center;
+    align-items: start;
+    margin-top: 1vh;
 }
+
+.menu-item-selection button {
+    /* get rid of normal button styling */
+    border: none;
+    /* make the button fill the container */
+    /* center the text vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*disable text underline*/
+    background-color: var(--auburn);
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-item-selection input {
+    text-align: right;
+}
+
 .menu-item-img {
     /* have the image fit within the container */
-    width: 100%;
+    display: flex;
+    max-width: 100%;
     height: auto;
     border-radius: 25px;
 }
+
 .menu-item-body {
     display: flex;
     /* align-items: center; */
     text-align: center;
     flex-direction: column;
 }
+
 .menu-item-info {
     display: flex;
     flex-direction: row;
@@ -111,22 +169,21 @@
     width: 100%;
     height: auto;
 }
+
 .menu-item-info h4 {
     margin: 1vh 0;
 }
 
 
-
 .content {
     width: 0;
     height: 0;
-    overflow: hidden;
 }
 
 .content.active {
-    width: 100%;
+    width: inherit;
     height: 100%;
-    transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-out;
 }
 
 #menuConfirm {
@@ -153,3 +210,14 @@
     justify-content: center;
     color: var(--arylide-yellow)
 }
+
+
+@media screen and (max-width: 768px) {
+    .menu-item {
+        margin: 1vw;
+    }
+}
+
+/* @media screen and (max-width: 600px) {
+
+} */
