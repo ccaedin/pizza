@@ -1,0 +1,72 @@
+* {
+    --auburn: #a31f26ff;
+    --arylide-yellow: #e3c567ff;
+    --satin-sheen-gold: #c8963eff;
+    --earth-yellow: #d9ae61ff;
+    --dark-cyan: #548687ff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--earth-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--arylide-yellow);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--auburn);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    color: var(--auburn);
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--auburn);
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button {
+    background-color: var(--auburn);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: var(--satin-sheen-gold);
+    transition: background-color 0.3s ease-in-out;
+}

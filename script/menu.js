@@ -244,3 +244,26 @@ function setUpReview() {
     });
 }
 
+$(document).ready(function() {
+    // Obtén los datos del sessionStorage
+    var storedDNI = window.sessionStorage.getItem("dni");
+    var storedNombre = window.sessionStorage.getItem("nombre");
+    var storedTelefono = window.sessionStorage.getItem("telefono");
+    var storedEmail = window.sessionStorage.getItem("email");
+
+    // Rellena los campos del formulario con los datos del sessionStorage
+    $("#name").val(storedNombre);
+    $("#phone").val(storedTelefono);
+    $("#email").val(storedEmail);
+
+    // Habilita el botón de enviar y la opción de pago con tarjeta si tienes todos los datos necesarios
+    var submitButton = $('input[type="button"]');
+    var paymentCard = $("#paymentCard");
+
+    if (storedDNI && storedNombre && storedTelefono && storedEmail) {
+        submitButton.prop("disabled", false);
+        paymentCard.prop("disabled", false);
+    }
+});
+
+
