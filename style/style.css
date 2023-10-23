@@ -283,5 +283,4 @@ dialog {
 .highlight.active {
     color: var(--arylide-yellow);
     font-weight: bold;
-    font-size: calc(0.7em + 1vw);
 }
