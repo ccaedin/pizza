@@ -130,6 +130,9 @@ dialog {
         width: 50%;
         grid-template-columns: repeat(2, 1fr);
     }
+    .html {
+        width: 100%;
+    }
 }
 
 /*the width changes to 90% when the screen is smaller than 600px*/

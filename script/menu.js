@@ -129,6 +129,7 @@ function setupMenuSelection() {
         var btnPlus = $(this).find(".btn-plus");
         var input = $(this).find("input");
         var title = $(this).find(".menu-item-title").text();
+        var image = $(this).find(".menu-item-img").attr("src");
         //input values changed
 
         //setup the minus button
@@ -156,7 +157,7 @@ function setupMenuSelection() {
         });
         input.change(function () {
             //if order.items[id] exists
-            order.items[id] = { title: title, count: +input.val(), price: price * input.val() };
+            order.items[id] = { title: title, count: +input.val(), price: price * input.val(), image: image};
             //if there is an order that matched title, change
 
             //calculate the total
@@ -196,7 +197,7 @@ function setUpReview() {
         var htmlItem = document.createElement("div");
         htmlItem.classList.add("order-item");
         var img = document.createElement("img");
-        img.src = "images/pizza1.jpg";
+        img.src = item.image;
         htmlItem.appendChild(img);
         var title = document.createElement("div");
         var nameTag = document.createElement("p");

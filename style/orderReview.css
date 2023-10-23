@@ -19,7 +19,7 @@
     flex-direction: column;
 }
 #orderItems {
-    display: flex;
+    display: grid;
     margin-bottom: 1vh;
     flex-direction: row;
     flex-wrap: wrap;
@@ -27,6 +27,7 @@
 }
 
 .order-item {
+    flex-grow: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-radius: 25px;

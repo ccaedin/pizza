@@ -15,15 +15,32 @@ $(document).ready(function () {
                 $(this).parent().parent().find(".carousel-image").removeClass("active");
                 $(this).parent().parent().find(".carousel-circle").removeClass("active");
                 $(this).addClass("active");
-                $(this).parent().parent().find(".carousel-image").eq($(this).index()).addClass("active");
+                var image = $(this).parent().parent().find(".carousel-image").eq($(this).index());
+                image.addClass("active");
                 //change the span to the active span
                 $(carousel).parent().find(".carousel-highlight.active").removeClass("active");
                 $(carousel).parent().find("highlight").eq($(this).index()).addClass("active");
+
+                var container = $("#process > .highlight-container > p");
+                var highlight = container.find(".highlight.active");
+                highlight.removeClass("active");
+                var highlightNum = image.attr("highlight");
+                container.find("span[highlight=" + highlightNum + "]").addClass("active");
             });
             $(this).find(".carousel-indicators").append(indicator);
         }
         //set the first carousel-indicator to active
         $(this).find(".carousel-circle").eq(0).addClass("active");
+    });
+    //setup highlights
+    var highlights = [];
+    $("img.highlight").each(function (highlight) {
+        //if highlight is image, continue
+        if ($(this).prop("tagName") == "IMG") {
+            highlights.push($(this));
+            console.log("g");
+            //add event for when the image has the class active
+        }
     });
     //a timer for 5 seconds
     var carouselTimerFunction = function () {
@@ -37,8 +54,15 @@ $(document).ready(function () {
                 var circle = $(this).find(".carousel-circle.active");
                 image.removeClass("active");
                 circle.removeClass("active");
-                $(this).find(".carousel-image").eq((image.index() + 1) % numPhotos).addClass("active");
+                var newImage = $(this).find(".carousel-image").eq((image.index() + 1) % numPhotos);
+                newImage.addClass("active");
                 $(this).find(".carousel-circle").eq((circle.index() + 1) % numPhotos).addClass("active");
+
+                var container = $("#process > .highlight-container > p");
+                var highlight = container.find(".highlight.active");
+                highlight.removeClass("active");
+                var highlightNum = newImage.attr("highlight");
+                container.find("span[highlight=" + highlightNum + "]").addClass("active");
             }
         });
     };
@@ -47,29 +71,5 @@ $(document).ready(function () {
 
     //set up highlight
     //find all highlights that are not images
-    var highlights = [];
-    $(".highlight").each(function (highlight) {
-        //if highlight is image, continue
-        if ($(this).prop("tagName") == "IMG") {
-            highlights.push($(this));
-            console.log("g");
-            //add event for when the image has the class active
-        }
-    });
-    //set up highlight timer
-    setInterval(function () {
-        highlights.forEach(function (highlight) {
-            // var highlight = $(h);
-            //print out classes
-            if (highlight.hasClass("active")) {
-                var container = highlight.closest(".highlight-container");
-                //list the sub elements of container
-                // console.log(container.find(".highlight"));
-                container.find(".highlight.active").removeClass("active");
-                container.find(".highlight").eq((highlight.index()) % container.find(".highlight").length).addClass("active");
-            }
-        });
-
-    });
 });
 //every time a css class changes
