@@ -122,30 +122,7 @@ dialog {
     justify-content: space-around;
 }
 
-@media screen and (max-width: 768px) {
-    .left {
-        width: 50%;
-    }
-    .right {
-        width: 50%;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .html {
-        width: 100%;
-    }
-}
 
-/*the width changes to 90% when the screen is smaller than 600px*/
-@media screen and (max-width: 600px) {
-    .left {
-        width: 75%;
-    }
-    /*the width changes to 90% when the screen is smaller than 600px*/
-    .right {
-        width: 25%;
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
 
 .left {
     /*the width is 100 minus the width of the right column*/
@@ -330,3 +307,77 @@ dialog {
     0% { transform: translateX(0%); }
     100% { transform: translateX(100%); }
 }
+/* Add this to your existing CSS */
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Menu Styles */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--satin-sheen-gold);
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 2;
+    display: none;
+    column-gap: 2%;
+    row-gap: 1%;
+    padding: 1%;
+    /*the width changes to 70% when the screen is smaller than 768px*/
+    grid-template-columns: repeat(1, 1fr);
+    /*hack to get the rows to be the same height*/
+    grid-auto-rows: 1fr;
+}
+
+.menu.active {
+    right: 0
+}
+
+@media screen and (max-width: 768px) {
+    .col.left {
+        width: 50%;
+    }
+    .col.right {
+        width: 50%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .html {
+        width: 100%;
+    }
+}
+
+/*the width changes to 90% when the screen is smaller than 600px*/
+@media screen and (max-width: 600px) {
+    .col.left {
+        width: 100%;
+    }
+    /*the width changes to 90% when the screen is smaller than 600px*/
+    .col.right {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+    }
+    .menu {
+        display: grid;
+    }
+
+}
+

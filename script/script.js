@@ -85,4 +85,9 @@ $(document).ready(function () {
         });
     }, ioConfig);
     document.querySelectorAll(".animate").forEach(function (animate) {observer.observe(animate);});
+
+    $(".hamburger-menu").click(function() {
+        $(".menu").toggleClass("active");
+    });
+
 });
