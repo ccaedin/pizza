@@ -86,7 +86,7 @@ $(document).ready(function () {
     }, ioConfig);
     document.querySelectorAll(".animate").forEach(function (animate) {observer.observe(animate);});
 
-    $(".hamburger-menu").click(function() {
+    $(".hamburger-menu img").click(function() {
         $(".menu").toggleClass("active");
     });
 
