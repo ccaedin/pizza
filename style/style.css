@@ -325,6 +325,7 @@ dialog {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-100%); }
 }
+/* make it go back to the right */
 @keyframes slide-out-right {
     0% { transform: translateX(0%); }
     100% { transform: translateX(100%); }

@@ -1,7 +1,7 @@
 //setup the order object
 var order = {
-    items: [
-    ],
+    items: {
+    },
     totalItems: 0,
     totalPrice: 0
 };
@@ -176,7 +176,10 @@ function setupMenuSelection() {
             else {
                 $("#menuSelectionNext").attr("disabled", true);
             }
-            window.sessionStorage.setItem("order", JSON.stringify(order));
+            var orderStr = JSON.stringify(order);
+            console.log(orderStr);
+            window.sessionStorage.setItem("order", orderStr);
+
         });
     });
 
@@ -184,6 +187,18 @@ function setupMenuSelection() {
         setUpReview();
         $("#reviewBall").click();
     });
+
+    //if the order is stored in the session storage load it
+    var storedOrder = window.sessionStorage.getItem("order");
+    if (storedOrder != null) {
+        order = JSON.parse(storedOrder);
+        console.log(order);
+        for (var key in order.items) {
+            var item = order.items[key];
+            $("#" + key + " input").val(item.count);
+            $("#" + key + " input").change();
+        }
+    }
 
 }
 
@@ -209,7 +224,6 @@ function setUpReview() {
         title.appendChild(nameTag);
         title.appendChild(priceTag);
         htmlItem.appendChild(title);
-        console.log("fsdf");
         $("#orderItems").append(htmlItem);
     }
     $("#orderTotalItems").text(order.totalItems);
@@ -262,7 +276,6 @@ $(document).ready(function() {
     var paymentCard = $("#paymentCard");
 
     if (storedDNI && storedNombre && storedTelefono && storedEmail) {
-        submitButton.prop("disabled", false);
         paymentCard.prop("disabled", false);
     }
 });

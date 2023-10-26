@@ -81,6 +81,8 @@
     border-radius: 5px;
     background-color: var(--auburn);
     flex-grow: 2;
+    color: white;
+    font-weight: bold;
 }
 
 

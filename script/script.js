@@ -74,6 +74,7 @@ $(document).ready(function () {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             //if the element is in the middle of the viewport
+            //activate it.
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
                 console.log(entry);
@@ -84,15 +85,4 @@ $(document).ready(function () {
         });
     }, ioConfig);
     document.querySelectorAll(".animate").forEach(function (animate) {observer.observe(animate);});
-    // observer.observe(document.querySelector(".animate-right"));
-    // $("div.animate").each(function (animate) { 
-    //     //animate left and right seperately
-    //     console.log(animate[0]);
-    //     var left = $(animate).find(".animate-left");
-    //     console.log(left[0]);
-    //     var right = $(animate).find(".animate-right");
-    //     observer.observe(left[0]);
-    //     observer.observe(right[0]);
-    // });
 });
-//every time a css class changes
