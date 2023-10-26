@@ -46,9 +46,7 @@ $(document).ready(function () {
     var carouselTimerFunction = function () {
         $(".carousel-container").each(function (carousel) {
             //find the carousel that is active an move it to the next image
-            console.log("carousel: " + carousel);
             var numPhotos = $(this).find(".carousel-image").length;
-            console.log("numPhotos: " + numPhotos);
             if (numPhotos > 0) {
                 var image = $(this).find(".carousel-image.active");
                 var circle = $(this).find(".carousel-circle.active");
@@ -68,8 +66,33 @@ $(document).ready(function () {
     };
     var carouselTimer = setInterval(carouselTimerFunction, 5000);
 
-
-    //set up highlight
-    //find all highlights that are not images
+    /* gracais de https://stackoverflow.com/questions/54807535/intersection-observer-api-observe-the-center-of-the-viewport */
+    const ioConfig = {
+        rootMargin: '-50% 0% -50% 0%',
+        threshold: 0.0
+    };
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            //if the element is in the middle of the viewport
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                console.log(entry);
+            }
+            else {
+                entry.target.classList.remove("active");
+            }
+        });
+    }, ioConfig);
+    document.querySelectorAll(".animate").forEach(function (animate) {observer.observe(animate);});
+    // observer.observe(document.querySelector(".animate-right"));
+    // $("div.animate").each(function (animate) { 
+    //     //animate left and right seperately
+    //     console.log(animate[0]);
+    //     var left = $(animate).find(".animate-left");
+    //     console.log(left[0]);
+    //     var right = $(animate).find(".animate-right");
+    //     observer.observe(left[0]);
+    //     observer.observe(right[0]);
+    // });
 });
 //every time a css class changes

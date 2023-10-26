@@ -284,3 +284,48 @@ dialog {
     color: var(--arylide-yellow);
     font-weight: bold;
 }
+
+.animate {
+    opacity: 0;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+.animate.active {
+    opacity: 1;
+}
+
+
+.animate-left {
+    transform: translateX(-100%);
+}
+.animate.active > .animate-left {
+    animation: slide-in 1s forwards;
+}
+
+.animate-right {
+    transform: translateX(100%);
+}
+.animate.active > .animate-right {
+    animation: slide-in 1s forwards;
+}
+.animate > .animate-left {
+    animation: slide-out 1s forwards;
+}
+
+.animate > .animate-right {
+    animation: slide-out-right 1s forwards;
+}
+    
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+    
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+@keyframes slide-out-right {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+}
